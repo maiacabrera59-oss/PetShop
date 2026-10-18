@@ -1,11 +1,14 @@
 
 const ProductosService = require("../services/ProductosService");
 
-// GET /api/productos?categoria=N
+// GET /api/productos?categoria=N&q=texto
 async function listarProductos(req, res) {
-    const { categoria } = req.query;
+    const { categoria, q } = req.query;
 
-    const productos = await ProductosService.listarProductos(categoria);
+    const productos = await ProductosService.listarProductos(
+        categoria,
+        q
+    );
 
     res.json(productos);
 }

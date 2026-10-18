@@ -30,9 +30,22 @@ export function obtenerCategorias() {
     return pedirJson(`${API_URL}/categorias`);
 }
 
-export function obtenerProductos(idCategoria) {
-    const query = idCategoria ? `?categoria=${idCategoria}` : "";
-    return pedirJson(`${API_URL}/productos${query}`);
+export function obtenerProductos(idCategoria, busqueda = "") {
+    const parametros = new URLSearchParams();
+
+    if (idCategoria) {
+        parametros.set("categoria", idCategoria);
+    }
+
+    if (busqueda) {
+        parametros.set("q", busqueda);
+    }
+
+    const query = parametros.toString();
+
+    return pedirJson(
+        `${API_URL}/productos${query ? `?${query}` : ""}`
+    );
 }
 
 export function crearProducto(producto) {
