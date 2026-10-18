@@ -2,10 +2,11 @@ const { Router } = require("express");
 
 
 const categoriasController = require("../controllers/CategoriasController");
+const asyncHandler = require("../middlewares/AsyncHandler");
 
 const router = Router();
 
-router.get("/categorias", (categoriasController.listarCategorias));
+router.get("/categorias", asyncHandler(categoriasController.listarCategorias));
 
 
 router.get("/salud", (req, res) => {
