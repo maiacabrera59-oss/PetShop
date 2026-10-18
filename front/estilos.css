@@ -1,0 +1,463 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #F7F1EE;
+    color: #63443D;
+}
+
+.encabezado {
+    background-color: #A85D4B;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 30px 16px;
+    border-bottom: 4px solid #D8A39A;
+}
+
+.encabezado h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    color: #F9E8E2;
+}
+
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 28px auto;
+    padding: 0 16px;
+    align-items: flex-start;
+}
+
+.seccion {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DAD5;
+    border-radius: 14px;
+    padding: 22px;
+    flex: 1 1 300px;
+    box-shadow: 0 4px 12px rgba(99, 68, 61, 0.06);
+}
+
+.seccion.ancha {
+    flex: 2 1 620px;
+}
+
+.seccion h2 {
+    color: #A85D4B;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin: 12px 0 5px;
+    color: #63443D;
+}
+
+select,
+textarea,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #E3CFC8;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #FFFCFA;
+    color: #63443D;
+}
+
+select:focus,
+textarea:focus,
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #C58A7C;
+    box-shadow: 0 0 0 3px rgba(197, 138, 124, 0.15);
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-principal {
+    width: 100%;
+    margin-top: 18px;
+    background-color: #A85D4B;
+    color: #FFFFFF;
+}
+
+.btn-principal:hover {
+    background-color: #914B3D;
+}
+
+.btn-iniciar,
+.btn-avanzar {
+    background-color: #D8A39A;
+    color: #593D38;
+}
+
+.btn-iniciar:hover,
+.btn-avanzar:hover {
+    background-color: #CB9187;
+}
+
+.btn-terminar {
+    background-color: #DDE8D9;
+    color: #476047;
+}
+
+.btn-terminar:hover {
+    background-color: #CBDCC5;
+}
+
+.mensaje {
+    margin-top: 12px;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+.mensaje.ok {
+    color: #4D7855;
+}
+
+.mensaje.error {
+    color: #AD4651;
+}
+
+.nota {
+    margin-top: 18px;
+    background-color: #F8EAE5;
+    border-left: 4px solid #D8A39A;
+    border-radius: 0 9px 9px 0;
+    padding: 12px;
+    font-size: 13px;
+    color: #79584F;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+}
+
+.tabla th {
+    background-color: #F0DCD6;
+    color: #63443D;
+    text-align: left;
+    padding: 10px;
+}
+
+.tabla td {
+    border-bottom: 1px solid #F0E5E0;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.tabla tr:hover td {
+    background-color: #FFF8F5;
+}
+
+.patente {
+    font-family: "Consolas", monospace;
+    font-weight: 700;
+    background-color: #F8EAE5;
+    border-radius: 5px;
+    padding: 3px 6px;
+    display: inline-block;
+}
+
+.detalle-vehiculo {
+    color: #8A746C;
+    font-size: 12px;
+}
+
+.estado {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.estado-ingresada,
+.estado-encargado,
+.estado-pendiente {
+    background-color: #F8E8D5;
+    color: #805B38;
+}
+
+.estado-reparacion,
+.estado-listo {
+    background-color: #F0DCD6;
+    color: #8B5046;
+}
+
+.estado-terminada,
+.estado-entregado,
+.estado-retirado {
+    background-color: #E2EDE0;
+    color: #476047;
+}
+
+.accion-terminar {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.accion-terminar input {
+    width: 110px;
+}
+
+.subtitulo {
+    color: #A85D4B;
+    margin: 18px 0 8px;
+    font-size: 15px;
+}
+
+.grilla-sabores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.tarjeta-sabor {
+    background-color: #FFFFFF;
+    border: 1.5px solid #E8DAD5;
+    border-radius: 12px;
+    padding: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    user-select: none;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.tarjeta-sabor:hover {
+    border-color: #D8A39A;
+}
+
+.tarjeta-sabor.seleccionada {
+    border-color: #C58A7C;
+    background-color: #FBEFEB;
+}
+
+.tarjeta-sabor.agotada {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #F2EFED;
+}
+
+.nombre-sabor {
+    font-weight: 600;
+    font-size: 13.5px;
+}
+
+.tilde {
+    color: #A85D4B;
+    font-weight: 700;
+    font-size: 18px;
+    min-width: 18px;
+}
+
+.cartel-agotado {
+    color: #AD4651;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.selector-tamanio {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.selector-tamanio label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+.resumen {
+    background-color: #F8EAE5;
+    border: 1px solid #EED9D2;
+    border-radius: 10px;
+    padding: 13px 14px;
+    min-height: 52px;
+}
+
+.resumen-vacio {
+    color: #8A746C;
+    font-size: 13.5px;
+}
+
+.lista-resumen {
+    margin: 0 0 6px 18px;
+    font-size: 13.5px;
+}
+
+.total-resumen {
+    font-size: 14px;
+}
+
+.aclaracion {
+    color: #8A746C;
+    font-size: 12px;
+}
+
+.form-final {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.form-final input {
+    flex: 1 1 220px;
+}
+
+.form-final .btn-principal {
+    width: auto;
+    margin-top: 0;
+    flex: 0 0 auto;
+}
+
+.filtro-categorias {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.btn-filtro {
+    border: 1px solid #E5D2CB;
+    background-color: #FFFFFF;
+    color: #79564D;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-filtro:hover {
+    background-color: #F8EAE5;
+}
+
+.btn-filtro.activo {
+    background-color: #A85D4B;
+    border-color: #A85D4B;
+    color: #FFFFFF;
+}
+
+.grilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-producto {
+    background-color: #FFFFFF;
+    border: 1px solid #E8DAD5;
+    border-radius: 13px;
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-producto:hover {
+    border-color: #D8A39A;
+    box-shadow: 0 4px 12px rgba(99, 68, 61, 0.07);
+}
+
+.tarjeta-producto.agotada {
+    opacity: 0.65;
+    background-color: #F7F3F1;
+}
+
+.categoria-producto {
+    font-size: 11px;
+    font-weight: 700;
+    color: #B16E60;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nombre-producto {
+    font-size: 15px;
+    color: #63443D;
+}
+
+.precio-producto {
+    font-size: 19px;
+    font-weight: 700;
+    color: #A85D4B;
+}
+
+.stock-producto {
+    font-size: 12.5px;
+    color: #8A746C;
+}
+
+.pie {
+    background-color: #E8D8D1;
+    color: #63443D;
+    text-align: center;
+    padding: 16px;
+    margin-top: 32px;
+    font-size: 13px;
+    border-top: 1px solid #DCC7BE;
+}
+
+@media (max-width: 600px) {
+    .principal {
+        margin: 16px auto;
+        gap: 16px;
+    }
+
+    .seccion {
+        padding: 16px;
+    }
+
+    .encabezado h1 {
+        font-size: 25px;
+    }
+
+    .grilla-productos {
+        grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    }
+
+    .tabla {
+        display: block;
+        overflow-x: auto;
+    }
+}
